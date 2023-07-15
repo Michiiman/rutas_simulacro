@@ -1,0 +1,42 @@
+{
+  "Rutas": [
+    {
+      "id": 1,
+      "NomRuta": "Cafetera"
+    },
+    {
+      "id": 2,
+      "NomRuta": "Del Sol"
+    },
+    {
+      "NomRuta": "Rutal del Cacao",
+      "id": 3
+    }
+  ],
+  "Puntos": [
+    {
+      "id": 1,
+      "NomPuntos": "Manizales",
+      "RutaId": 1,
+      "Imagen": "https://www.ciencuadras.com/blog/wp-content/uploads/2019/12/Plaza-Boli%CC%81var-Manizales-1280x720.jpg"
+    },
+    {
+      "id": 2,
+      "NomPuntos": "Armenia",
+      "RutaId": 1,
+      "Imagen": "https://www.turismoquindio.com/wp-content/uploads/2017/08/armenia-plaza-bolivar.png"
+    },
+    {
+      "id": 3,
+      "NomPuntos": "Tunja",
+      "RutaId": 2,
+      "Imagen": "https://periodicoeldiario.com/wp-content/uploads/2021/08/Tunja-35.jpg"
+    },
+    {
+      "id": 4,
+      "NomPuntos": "Bucaramanga",
+      "RutaId": 2,
+      "Imagen": "https://f.hubspotusercontent10.net/hubfs/4704261/bucaramanga.jpg"
+    }
+  ]
+}
