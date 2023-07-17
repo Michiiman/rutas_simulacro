@@ -7,9 +7,10 @@ body{
 header{
     width: 100%;
     background-color: rgb(54, 59, 63);;
-   
 }
-
+.card img{
+    width: 15em;
+}
 .centrar{
     place-items: center;
 }
@@ -26,13 +27,13 @@ h1{
 }
 @media (max-width: 768px) {
     h1 {
-      font-size: 5em;
+    font-size: 5em;
     }
 }
-  
+
 @media (max-width: 480px) {
     h1 {
-      font-size: 3em;
+    font-size: 3em;
     }
 }
 
