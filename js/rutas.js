@@ -7,13 +7,18 @@ const urlPuntos = 'http://localHost:3000/Puntos';
 const urlRutas = 'http://localHost:3000/Rutas';
 const headers = new Headers({ 'Content-Type': 'application/json' });
 
-
+// import {btnAddDatos,btnAddPuntos} from 'js/app.js'
 
 //Eventos
+
+//Botones
 btnAddPuntos.addEventListener('click', agregarPuntos)
 
 btnCerrar.addEventListener('click', cerrarModal);
 
+
+
+//Forms
 formsRuta.addEventListener('submit', agregarRutas);
 
 llamarAPI(urlRutas, urlPuntos);
@@ -32,7 +37,6 @@ function agregarPuntos() {
     puntos.appendChild(elementos);
 
 }
-
 function agregarRutas(event) {
     event.preventDefault();
     const formData = new FormData(formsRuta);
@@ -64,55 +68,6 @@ function llamarAPI(url, url2) {
             console.error(error);
         });
 }
-
-//Metodo POST
-function post(data, url) {
-    let config = {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(Object.fromEntries(data))
-    };
-
-    fetch(url, config)
-        .then(response => response.json())
-        .then(result => mostrarHtml(result))
-}
-
-
-
-//Metodos
-
-// function mostrarHtml(dato1, dato2) {
-//     const caja_cartas = document.getElementById('caja_cartas');
-//     const carta_puntos= document.getElementById('carta_puntos');
-//     dato1.forEach(carta => {
-//         const card=document.createElement('div');
-//         card.setAttribute('class','card');
-//         card.innerHTML=`
-//         <img src="img/ruta.jpg" class="card-img-top" alt="...">
-//                     <div class="card-body">
-//                         <h5 id="carta_titulo" class="card-title">${carta.NomRuta}</h5>
-//                         <p class="card-text">
-//                         <ul id="carta_puntos">
-//                         </ul>
-//                         </p>
-//                         <a type="button" class="btn btn-primary" data-bs-toggle="modal"data-bs-target="#modalDetalleRutas">Detalles</a>
-//                     </div>
-//         `
-//         caja_cartas.appendChild(card);
-        
-//         dato2.forEach(puntos=>{
-//             const li=document.createElement('li');
-//             if (carta.id==puntos.RutaId){
-//                 li.innerHTML+=`${puntos.NomPuntos}` 
-//                 carta_puntos.appendChild(li);
-//             }
-//             console.log(carta_puntos);
-//         })
-//     });
-    
-// }
-
 function mostrarHtml(dato1, dato2) {
     const caja_cartas = document.getElementById('caja_cartas');
 
@@ -127,7 +82,10 @@ function mostrarHtml(dato1, dato2) {
                     <ul id="carta_puntos">
                     </ul>
                 </p>
+                <div class="d-flex gap-3">
                 <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetalleRutas">Detalles</a>
+                <a type="button" class="btn btn-danger eliminar_carta"  >Eliminar</a>
+                </div>
             </div>
         `;
         caja_cartas.appendChild(card);
@@ -143,4 +101,28 @@ function mostrarHtml(dato1, dato2) {
         });
     });
 }
+function eliminarCarta() {
+
+}
+    
+
+
+//Metodo POST
+function post(data, url) {
+    let config = {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(Object.fromEntries(data))
+    };
+
+    fetch(url, config)
+        .then(response => response.json())
+        .then(result => mostrarHtml(result))
+}
+function delet(data,id){
+    
+}
+
+//Metodos
+
 
